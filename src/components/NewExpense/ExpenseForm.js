@@ -48,9 +48,18 @@ function ExpenseForm(props) {
     };
 
     props.onSaveExpenseData(expenseData);
-    setEnteredTitle('');
-    setEnteredAmount('');
-    setEnteredDate('');
+    setEnteredTitle("");
+    setEnteredAmount("");
+    setEnteredDate("");
+  }
+
+  function hideDisplay() {
+      let addBtn = document.querySelector('#addNewExpenseBtn');
+      let showForm = document.querySelector('#form');
+  
+      addBtn.style.display = 'block';
+      showForm.style.display = 'none';
+      console.log('hello from Hide Display')
   }
 
   return (
@@ -78,7 +87,7 @@ function ExpenseForm(props) {
           <label>Date</label>
           <input
             type="date"
-            min="2022-01-01"
+            min="2019-01-01"
             max="2025-12-22"
             value={enteredDate}
             onChange={dateChangeHandler}
@@ -86,6 +95,7 @@ function ExpenseForm(props) {
         </div>
       </div>
       <div className="new-expense__actions">
+        <button type="button" onClick={hideDisplay}>Cancel</button>
         <button type="submit">Add Expense</button>
       </div>
     </form>
