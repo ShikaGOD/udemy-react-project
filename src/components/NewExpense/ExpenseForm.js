@@ -53,15 +53,6 @@ function ExpenseForm(props) {
     setEnteredDate("");
   }
 
-  function hideDisplay() {
-      let addBtn = document.querySelector('#addNewExpenseBtn');
-      let showForm = document.querySelector('#form');
-  
-      addBtn.style.display = 'block';
-      showForm.style.display = 'none';
-      console.log('hello from Hide Display')
-  }
-
   return (
     <form onSubmit={submitHandler}>
       <div className="new-expense__controls">
@@ -95,7 +86,7 @@ function ExpenseForm(props) {
         </div>
       </div>
       <div className="new-expense__actions">
-        <button type="button" onClick={hideDisplay}>Cancel</button>
+      <button type="button" onClick={props.onCancel}>Cancel</button>
         <button type="submit">Add Expense</button>
       </div>
     </form>
